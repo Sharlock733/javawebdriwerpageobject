@@ -1,4 +1,4 @@
-package Pages;
+package mapsmepages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

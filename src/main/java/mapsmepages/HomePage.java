@@ -1,10 +1,14 @@
-package Pages;
+package mapsmepages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage {
     public WebDriver driver;
+
+    public static final String URLMAPSME = "https://mapsme-locals-qa.ltst.su:9443/ru/";
+    //Присваиваю переменной URLMAPSME ссылку на нужный сайт
+
 
     By enterButton = By.xpath("/html/body/div/header/div/div[4]/ul[1]/li[4]/a");//Кнопка войти
     By inboxButton = By.xpath("/html/body/div/header/div/div[4]/ul[1]/li[4]/a/div");//Кнопка инбокс

@@ -1,21 +1,23 @@
-package Tests;
+package tests;
 
-import Pages.AuthorizationPage;
-import Pages.HomePage;
-import Pages.InboxPage;
-import Pages.TripPage;
+import mapsmepages.AuthorizationPage;
+import mapsmepages.HomePage;
+import mapsmepages.InboxPage;
+import mapsmepages.TripPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class TestButtonShowMore {
+import static mapsmepages.HomePage.URLMAPSME;
+
+public class СheckAvailabilityOfVisitors {
     @Test
     public static void TestAuthorization() throws InterruptedException {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\Alexey\\Downloads\\geckodriver-v0.19.1-win64\\geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        driver.get("https://mapsme-locals-qa.ltst.su:9443/ru/");//Переход по ссылке на сайт
+        driver.get(URLMAPSME);//Переход по ссылке на сайт
 
         AuthorizationPage login = new AuthorizationPage(driver);
         HomePage home = new HomePage(driver);
@@ -27,17 +29,14 @@ public class TestButtonShowMore {
         login.typePassword();
         login.clickOnLoginButton();  //Авторизация
 
-        home.clickOnButtonShowMore();
+        home.clickOnInboxButton();//переход в инбокс
+        inbox.clickOnViseters();//переход на станицу визитеров
 
-        Thread.sleep(5000);
-
-
-        if (!driver.findElements(By.xpath("\n" + "/html/body/div/div[1]/main/div[2]/section[2]/div/div/div/div/div[18]/div/div")).isEmpty()) {
-            System.out.println("Кнопка Show more работает!!!");
+        if (!driver.findElements(By.xpath("/html/body/div/div[1]/main/div/div/div/div/div")).isEmpty()) {
+            System.out.println("Визитеры есть на странице");
         } else {
-            System.out.println("Кнопка Show more не работает");
-        }//Проверка, появилась ли надпись "Изменения настроек профиля успешно сохранены"
-
+            System.out.println("Визитеров нет на странице");
+        }
 
     }
 }
