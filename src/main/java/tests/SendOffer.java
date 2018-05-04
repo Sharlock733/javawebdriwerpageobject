@@ -28,7 +28,7 @@ public class SendOffer {
             login.typeUserName();
             login.typePassword();
             login.clickOnLoginButton();  //Авторизация
-
+Thread.sleep(5000);
             home.clickAlexeyProfile();//Клик на профиль Алексея
             alexPage.clickOnSendOfferButtonOnAlexeyProfile();//Клик "Отправить оффер" в профиле Алексея
             offer.clickOnFirstRadiobutton();
@@ -40,8 +40,9 @@ public class SendOffer {
             } else {
                 System.out.println("Оффер не отправлен!!!!");
             }//Проверка, появилась ли форма отправленного офера
-
+            driver.close();
         }
+
 
     }
 

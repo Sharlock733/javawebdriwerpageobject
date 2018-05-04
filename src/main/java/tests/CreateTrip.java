@@ -31,11 +31,9 @@ public class CreateTrip {
 
         home.clickOkOnCreateTrip();//Переход в трипы
         Thread.sleep(5000);
-        Thread.sleep(5000);
         trip.EnterOmskOnSelectCity();
         Thread.sleep(5000);
         trip.PressEnterOnSelectCity();//создание нового трипа
-
 
         driver.findElement(By.xpath("/html/body/div/div[1]/main/div/section[2]/div/form/div[6]/button")).click();
         if (!driver.findElements(By.xpath("/html/body/div/div[1]/main/div/section[3]/div/div/div/div/div/div[2]")).isEmpty()) {
@@ -43,6 +41,6 @@ public class CreateTrip {
         } else {
             System.out.println("Новый трип не создан");
         }//проверка
-
+        driver.close();
     }
 }

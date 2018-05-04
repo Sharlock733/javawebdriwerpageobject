@@ -37,6 +37,7 @@ public class СheckAvailabilityOfVisitors {
         } else {
             System.out.println("Визитеров нет на странице");
         }
+        driver.close();
 
     }
 }

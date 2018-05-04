@@ -11,7 +11,8 @@ import org.testng.annotations.Test;
 
 import static mapsmepages.HomePage.URLMAPSME;
 
-public class TestButtonShowMore {
+public class TestSearchCity {
+
     @Test
     public static void TestAuthorization() throws InterruptedException {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\Alexey\\Downloads\\geckodriver-v0.19.1-win64\\geckodriver.exe");
@@ -24,22 +25,17 @@ public class TestButtonShowMore {
         TripPage trip = new TripPage(driver);
         InboxPage inbox = new InboxPage(driver);
 
-        home.clickOnEnterButton();
-        login.typeUserName();
-        login.typePassword();
-        login.clickOnLoginButton();  //Авторизация
+        home.clickSearchField();
+        Thread.sleep(2000);
+        home.clickOnHint();
+        home.clickOnSearch();
 
-        home.clickOnButtonShowMore();
-
-        Thread.sleep(5000);
-
-
-        if (!driver.findElements(By.xpath("\n" + "/html/body/div/div[1]/main/div[2]/section[2]/div/div/div/div/div[18]/div/div")).isEmpty()) {
-            System.out.println("Кнопка Show more работает!!!");
+        if (!driver.findElements(By.xpath("/html/body/div/div[1]/main/div/section[2]/div/div/div/div/div/div/div")).isEmpty()) {
+            System.out.println("Нужный город найден!");
         } else {
-            System.out.println("Кнопка Show more не работает");
-        }//Проверка, работает ли выдача по нажатию кнопки Show more"
-
-        driver.close();
+            System.out.println("Нужный город не найден!!!!");
+        }
+        driver.close();//Закрытие браузера
     }
+
 }

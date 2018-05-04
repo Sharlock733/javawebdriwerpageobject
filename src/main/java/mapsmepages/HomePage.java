@@ -21,10 +21,14 @@ public class HomePage {
     By tabOnDeLanguage = By.xpath("/html/body/div/div[2]/div/form/div/div[2]/select/option[5]");//Выбор De в меню
     By tabOnRuLanguage = By.xpath("/html/body/div/div[2]/div/form/div/div[2]/select/option[2]");//Выбор Ru в меню
     By tabOkOnChangeLanguage = By.xpath("/html/body/div/div[2]/div/form/div/div[2]/button"); //Кнопка ок
-    By tabCreateNewTrip = By.xpath("/html/body/div/div[1]/main/div[2]/section[3]/div[2]/a");//Нажатие на кнопку "Создать путешествие"
-    By tabOnButtonShowMore = By.xpath("/html/body/div/div[1]/main/div/section[2]/div/div/div/div[2]/button"); // Нажатие на кнопку "Show more"
+    By tabCreateNewTrip = By.xpath("/html/body/div/div[1]/main/div[2]/section[3]/div[2]/a");//Кнопка "Создать путешествие"
+    By tabOnButtonShowMore = By.xpath("/html/body/div/div[1]/main/div/section[2]/div/div/div/div[2]/button"); //Кнопка "Show more"
     By findAlexeyProfile = By.xpath("/html/body/div/div[1]/main/div[2]/section[2]/div/div/div/div[1]/div[4]/div/a");
     By tabProfileSetting = By.xpath("/html/body/div/header/div/div[4]/ul[1]/li[3]/div/div[2]/ul[2]/li[1]/a");
+    By tabSearchField = (By.name("vueInstant"));
+    By tabOnHint = By.xpath("/html/body/div/div[1]/main/div/section[1]/div/div[2]/div[1]/div/form/div[2]/div/div/div/div/div/ul/li[1]");
+    By tabOnSearch = By.xpath("/html/body/div/div[1]/main/div/section[1]/div/div[2]/div[1]/div/form/div[2]/button");
+
 
     public HomePage(WebDriver driver) {
 
@@ -89,6 +93,19 @@ public class HomePage {
 
     public void clickProfileSetting() {
         driver.findElement(tabProfileSetting).click(); //Таб на настройки профля в выпадающем меню
+    }
+
+    public void clickSearchField() {
+        driver.findElement(tabSearchField).sendKeys("Отешево");//Ввод "Отешево" в поле поиска
+    }
+
+    public void clickOnHint() {
+        driver.findElement(tabOnHint).click(); //Таб на подсказку
+    }
+
+
+    public void clickOnSearch() {
+        driver.findElement(tabOnSearch).click(); //Таб на кнопку поиск
     }
 
 

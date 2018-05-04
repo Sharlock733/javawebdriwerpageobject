@@ -31,5 +31,6 @@ public class OpenMessage {
         } else {
             System.out.println("Инбокс не открывается!");
         }
+        driver.close();
     }
 }
