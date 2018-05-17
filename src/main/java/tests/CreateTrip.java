@@ -12,7 +12,6 @@ import static mapsmepages.HomePage.URLMAPSME;
 
 public class CreateTrip {
 
-
     @Test
     public static void TestAuthorization() throws InterruptedException {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\Alexey\\Downloads\\geckodriver-v0.19.1-win64\\geckodriver.exe");
