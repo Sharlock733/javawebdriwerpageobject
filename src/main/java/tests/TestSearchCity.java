@@ -9,13 +9,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import static mapsmepages.AlexeyProfilePage.GECODR;
+import static mapsmepages.AlexeyProfilePage.GECODRPATH;
 import static mapsmepages.HomePage.URLMAPSME;
 
 public class TestSearchCity {
 
     @Test
     public static void TestAuthorization() throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Alexey\\Downloads\\geckodriver-v0.19.1-win64\\geckodriver.exe");
+        System.setProperty(GECODR, GECODRPATH);
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(URLMAPSME);//Переход по ссылке на сайт

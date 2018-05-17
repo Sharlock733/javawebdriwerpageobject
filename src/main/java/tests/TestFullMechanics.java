@@ -13,13 +13,15 @@ import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+import static mapsmepages.AlexeyProfilePage.GECODR;
+import static mapsmepages.AlexeyProfilePage.GECODRPATH;
 import static org.openqa.selenium.Keys.CONTROL;
 // НЕ РЕФАКТОРИЛСЯ, НО РАОТАЕТ
 
 @Test
 public class TestFullMechanics {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Alexey\\Downloads\\geckodriver-v0.19.1-win64\\geckodriver.exe");
+        System.setProperty(GECODR, GECODRPATH);
         WebDriver driver = new FirefoxDriver();   // Объявляю драйвер
         driver.get("https://mapsme-locals-qa.ltst.su:9443/ru/");//Переход по ссылке на сайт
         WebElement TabButtonLogin = (new WebDriverWait(driver, 20))
