@@ -9,8 +9,8 @@ public class AlexeyProfilePage {
     By SendOfferButtonOnAlexeyProfile = By.xpath("/html/body/div/div[1]/main/div/div[2]/div/div[1]/div/section/div[2]/div/div[1]/button");//-
 
 
-    public static final String GECODR  = "webdriver.gecko.driver";
-    public static final String GECODRPATH  = "C:\\Users\\Alexey\\Downloads\\geckodriver-v0.19.1-win64\\geckodriver.exe";
+    public static final String GECKODRIVERNAME = "webdriver.gecko.driver";
+    public static final String GECKODRIVERPATH = "C:\\Users\\Alexey\\Downloads\\geckodriver-v0.19.1-win64\\geckodriver.exe";
     //Глобальное описание путей к драйверу
 
 

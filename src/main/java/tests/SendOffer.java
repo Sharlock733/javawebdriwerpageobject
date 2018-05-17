@@ -6,15 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-import static mapsmepages.AlexeyProfilePage.GECODR;
-import static mapsmepages.AlexeyProfilePage.GECODRPATH;
+import static mapsmepages.AlexeyProfilePage.GECKODRIVERNAME;
+import static mapsmepages.AlexeyProfilePage.GECKODRIVERPATH;
 import static mapsmepages.HomePage.URLMAPSME;
 
 public class SendOffer {
 
         @Test
         public void TestAuthorization() throws InterruptedException {
-            System.setProperty(GECODR, GECODRPATH);
+            System.setProperty(GECKODRIVERNAME, GECKODRIVERPATH);
             WebDriver driver = new FirefoxDriver();
             driver.manage().window().maximize();
             driver.get(URLMAPSME);//Переход по ссылке на сайт
@@ -26,6 +26,7 @@ public class SendOffer {
             AlexeyProfilePage alexPage = new AlexeyProfilePage(driver);
             OfferPage offer = new OfferPage(driver);
 
+            home.clickOnCookiButton();
             home.clickOnEnterButton();
             login.typeUserName();
             login.typePassword();
@@ -44,8 +45,6 @@ Thread.sleep(5000);
             }//Проверка, появилась ли форма отправленного офера
             driver.close();
         }
-
-
     }
 
 

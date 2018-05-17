@@ -10,6 +10,7 @@ public class HomePage {
     //Присваиваю переменной URLMAPSME ссылку на нужный сайт
 
 
+    By CookiButton = By.xpath("/html/body/div[1]/div[2]/a");//Нажатие "Хорошо" на разрешении об использовании Куки
     By enterButton = By.xpath("/html/body/div/header/div/div[4]/ul[1]/li[4]/a");//Кнопка войти
     By inboxButton = By.xpath("/html/body/div/header/div/div[4]/ul[1]/li[4]/a/div");//Кнопка инбокс
     By tabProfile = By.xpath("/html/body/div/header/div/div[4]/ul[1]/li[3]/div/div[1]");//Нажатие на профиль
@@ -38,6 +39,12 @@ public class HomePage {
     public void clickOnEnterButton() {
         driver.findElement(enterButton).click(); //Клик на кнопку войти на экране авторизации
     }
+
+
+    public void clickOnCookiButton() {
+        driver.findElement(CookiButton).click(); //Нажатие "Хорошо" на разрешении об использовании Куки
+    }
+
 
     public void clickOnInboxButton() {
         driver.findElement(inboxButton).click();//Клик на кнопку инбокс
